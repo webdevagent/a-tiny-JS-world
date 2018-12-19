@@ -7,6 +7,9 @@
 
 // ======== OBJECTS DEFINITIONS ========
 // Define your objects here
+const dog={};
+const cat={};
+const human={};
 
 
 // ======== OUTPUT ========
@@ -27,5 +30,3 @@
    print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny');
    print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny', 'div');
    */
-
-
