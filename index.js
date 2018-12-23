@@ -7,9 +7,42 @@
 
 // ======== OBJECTS DEFINITIONS ========
 // Define your objects here
-const dog={};
-const cat={};
-const human={};
+
+const residents=[
+  const Dog={
+    name:'Princess',
+    gender:'female',
+    paws:4,
+    voice:'woof',
+    friends:'Garry, Patrick, Wendy'
+
+  },
+  const Cat={
+    name:'Garry',
+    gender:'male',
+    paws:4,
+    voice:'meow',
+    friends:'Princess, Patrick, Wendy'
+  },
+  const Man={
+    name:'Patrick',
+    gender:'male',
+    legs:2,
+    hands:2,
+    voice:'How do you do?',
+    friends:'Garry, Princess, Wendy'
+  },
+  const Woman={
+    name:'Wendy',
+    gender:'female',
+    legs:2,
+    hands:2,
+    voice:'Hello my friends',
+    friends:'Garry, Patrick, Princess'
+  }
+]
+
+print(Man.gender);
 
 
 // ======== OUTPUT ========
