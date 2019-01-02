@@ -1,84 +1,45 @@
-/* Refer to https://github.com/OleksiyRudenko/a-tiny-JS-world for the task details
-   Complete the below for code reviewers' convenience:
-
-   Code repository: _put repo URL here_
-   Web app: _put project's github pages URL here_
-   */
-
-// ======== OBJECTS DEFINITIONS ========
-// Define your objects here
-
-
-const Dog = {
-  species: 'dog',
-  name: 'Princess',
-  gender: 'female',
-  paws: 4,
-  voice: 'woof',
-  friends: 'Garry, Patrick, Wendy'
-
-};
-const Cat = {
-  species: 'cat',
-  name: 'Garry',
-  gender: 'male',
-  paws: 4,
-  voice: 'meow',
-  friends: 'Princess, Patrick, Wendy, Kitty'
-};
-const Man = {
-  species: 'human',
-  name: 'Patrick',
-  gender: 'male',
-  legs: 2,
-  hands: 2,
-  voice: 'How do you do?',
-  friends: 'Garry, Princess, Wendy, Kitty'
-};
-const Woman = {
-  species: 'human',
-  name: 'Wendy',
-  gender: 'female',
-  legs: 2,
-  hands: 2,
-  voice: 'Hello my friends',
-  friends: 'Garry, Patrick, Princess'
-};
-const catWoman = {
-  species: 'human',
-  name: 'Kitty',
-  gender: 'female',
-  paws: 2,
-  hands: 2,
-  voice: 'meow',
-  friends: 'Garry, Patrick'
-};
-const residents = [Dog, Cat, Man, Woman];
-
-const showResidentInfo = () => {
-  residents.forEach(num => {
-    let residentData = Object.values(num);
+//Initalize and define Residents classes
+/*Resident is a parent class and all future classes
+will inherit from this class*/
+class Resident {
+  constructor(species, name, gender, legs, hands, voice, friends) {
+    this.species = species;
+    this.name = name;
+    this.gender = gender;
+    this.legs = legs;
+    this.hands = hands;
+    this.voice = voice;
+    this.friends = friends;
+  }
+  showResidentInfo() {
+    let residentData = Object.values(this);
+    residentData = residentData.filter(num => num != 'paws');
+    console.log(residentData);
     print(residentData.join('; '));
-  });
+  }
 }
-showResidentInfo();
-
-
-// ======== OUTPUT ========
-/* Use print(message) for output.
-   Default tag for message is <pre>. Use print(message,'div') to change containing element tag.
-
-   Message can contain HTML markup. You may also tweak index.html and/or styles.css.
-   However, please, REFRAIN from improving visuals at least until your code is reviewed
-   so code reviewers might focus on a single file that is index.js.
-   */
-
-/* Print examples:
-   print('ABC');
-   print('<strong>ABC</strong>');
-   print('<strong>ABC</strong>', 'div');
-
-   print('human; John; male; 2; 2; Hello world!; Rex, Tom, Jenny');
-   print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny');
-   print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny', 'div');
-   */
+class Animal extends Resident {
+  constructor(species, name, gender, legs, hands, voice, friends) {
+    super(species, name, gender, legs, hands, voice, friends);
+  }
+}
+class Human extends Resident {
+  constructor(species, name, gender, legs, hands, voice, friends) {
+    super(species, name, gender, legs, hands, voice, friends);
+  }
+}
+class Miracle extends Resident {
+  constructor(species, name, gender, paws, hands, voice, friends) {
+    super(species, name, gender, paws, hands, voice, friends);
+  }
+}
+//Defining residents objects
+const Dog = new Animal('dog', 'Princess', 'female', 4, 'paws', 'woof', 'Garry, Patrick, Wendy');
+const Cat = new Animal('cat', 'Garry', 'male', 4, 'paws', 'meow', 'Princess, Patrick, Wendy, Kitty');
+const Man = new Human('human', 'Patrick', 'male', 2, 2, 'How do you do?', 'Garry, Princess, Wendy, Kitty');
+const Woman = new Human('human', 'Wendy', 'female', 2, 2, 'Hello my friends', 'Garry, Patrick, Princess');
+const catWoman = new Miracle('human', 'Kitty', 'female', 2, 2, 'meow', 'Garry, Patrick');
+//Group residents object in Array for future manipulations
+const residents = [Dog, Cat, Man, Woman];
+//call showResidentInfo method for each residents object
+residents.forEach(num => num.showResidentInfo());
