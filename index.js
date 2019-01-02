@@ -14,7 +14,6 @@ class Resident {
   showResidentInfo() {
     let residentData = Object.values(this);
     residentData = residentData.filter(num => num != 'paws');
-    console.log(residentData);
     print(residentData.join('; '));
   }
 }
