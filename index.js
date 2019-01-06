@@ -49,6 +49,6 @@ const Cat = new Animal('cat', 'Garry', 'male', 'meow', 'Princess, Patrick, Wendy
 const Man = new Human('human', 'Patrick', 'male', 'How do you do?', 'Garry, Princess, Wendy, Kitty');
 const Woman = new Human('human', 'Wendy', 'female', 'Hello my friends', 'Garry, Patrick, Princess');
 //Group residents object in Array for future manipulations
-const residents = [Dog, Cat, Man, Woman, catWoman];
+const residents = [Dog, Cat, Man, Woman];
 //call showResidentInfo method for each residents object
 residents.forEach(num => num.getResidentInfo());
